@@ -1,0 +1,7 @@
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\obj\Debug\net5.0\FilmesAPI.csproj.AssemblyReference.cache
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\obj\Debug\net5.0\FilmesAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\obj\Debug\net5.0\FilmesAPI.AssemblyInfoInputs.cache
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\obj\Debug\net5.0\FilmesAPI.AssemblyInfo.cs
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\obj\Debug\net5.0\FilmesAPI.csproj.CoreCompileInputs.cache
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\obj\Debug\net5.0\FilmesAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\obj\Debug\net5.0\FilmesAPI.MvcApplicationPartsAssemblyInfo.cache
