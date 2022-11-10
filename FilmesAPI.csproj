@@ -7,14 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
+    <Compile Remove="Data\NovaPasta1\**" />
+    <Compile Remove="Data\NovaPasta2\**" />
+    <Compile Remove="Data\NovaPasta3\**" />
+    <Content Remove="Data\NovaPasta1\**" />
+    <Content Remove="Data\NovaPasta2\**" />
+    <Content Remove="Data\NovaPasta3\**" />
+    <EmbeddedResource Remove="Data\NovaPasta1\**" />
+    <EmbeddedResource Remove="Data\NovaPasta2\**" />
+    <EmbeddedResource Remove="Data\NovaPasta3\**" />
+    <None Remove="Data\NovaPasta1\**" />
+    <None Remove="Data\NovaPasta2\**" />
+    <None Remove="Data\NovaPasta3\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.7" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
