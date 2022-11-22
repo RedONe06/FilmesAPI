@@ -1,17 +1,36 @@
-![image](https://user-images.githubusercontent.com/98191980/201112306-393edb45-275e-4d8b-9913-41f72b642dcf.png)
+![image](https://user-images.githubusercontent.com/98191980/203300712-ecf5a4d6-0c66-4ac8-91ff-cbfcace233f4.png)
 
-<img src="https://img.shields.io/static/v1?label=by&message=Alura&color=blue&style=for-the-badge"> <img src="https://img.shields.io/static/v1?label=Tech&message=.NET 6.0&color=00BFFF&style=for-the-badge&logo=.NET"> <img src="https://img.shields.io/static/v1?label=Tech&message=C%23&color=00BFFF&style=for-the-badge&logo=csharp">
+<img src="https://img.shields.io/static/v1?label=by&message=Alura&color=blue&style=for-the-badge"> <img src="https://img.shields.io/static/v1?label=Tech&message=.NET 6.0&color=green&style=for-the-badge&logo=.NET"> <img src="https://img.shields.io/static/v1?label=Tech&message=C%23&color=green&style=for-the-badge&logo=csharp">
 
 # Descrição do sistema
 
-O projeto se trata de uma API Rest com .NET 6.0 básica de filmes utilizando EFCore 6.0, conectada a um banco de dados MySQL. Como referência foi-se utilizado um projeto da Alura, construído na versão 5.0 do .NET.
+O projeto se trata de uma API Rest com .NET 6.0 utilizando EFCore 6.0, conectada a um banco de dados MySQL. Neste projeto existem 5 tipos de entidades: Cinemas, Gerentes, Filmes, Endereços e Sessões. Abaixo, segue um diagrama do banco:
+
+![Entitys drawio](https://user-images.githubusercontent.com/98191980/203301373-6fec1eee-32db-4f36-a5a7-6831a09ebaa4.png)
+
+Como referência foi-se utilizado um projeto da Alura, construído na versão 5.0 do .NET.
+
+# Sobre o curso
+
+- Utilização do **AutoMapper** para mapear entidades;
+- Execução de relacionamentos **1:1, 1:n, n:n**;
+- Utilização de **Lazy Loading Proxies** para o carregamento de informações em tempo de execução;
+- Alterações nas migrations com **ModelBuilder**;
+- Evitando ciclos com **JsonIgnore**;
+- Evitar **deleção em cascata**;
+- Uso de **DTO's** para o gerenciamento de informações;
+- Métodos utilizando **query parameters e LINQ**;
 
 # Executando
 
-## 🔗 EndPoint
+## 🔗 EndPoints
 
 ```
 localhost/filme
+localhost/gerente
+localhost/sessao
+localhost/endereco
+localhost/cinema
 ```
 ## ⚙ Downloads
 
@@ -45,6 +64,8 @@ Executar de acordo com a IDE ou editor de códigos;
 ### Fazendo requisições
 
 Fazer requisições de _GET, GET/id, POST, PUT, DELETE_ para o endpoint a partir do Postman;
+
+
 
 
 
