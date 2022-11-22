@@ -16,22 +16,22 @@ namespace FilmesAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FilmeId = table.Column<int>(type: "int", nullable: false),
-                    CinemaId = table.Column<int>(type: "int", nullable: false),
+                    FilmeFK = table.Column<int>(type: "int", nullable: false),
+                    CinemaFK = table.Column<int>(type: "int", nullable: false),
                     HorarioDeEncerramento = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Sessoes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Sessoes_Cinemas_CinemaId",
-                        column: x => x.CinemaId,
+                        name: "FK_Sessoes_Cinemas_CinemaFK",
+                        column: x => x.CinemaFK,
                         principalTable: "Cinemas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Sessoes_Filmes_FilmeId",
-                        column: x => x.FilmeId,
+                        column: x => x.FilmeFK,
                         principalTable: "Filmes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -39,14 +39,14 @@ namespace FilmesAPI.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sessoes_CinemaId",
+                name: "IX_Sessoes_CinemaFK",
                 table: "Sessoes",
-                column: "CinemaId");
+                column: "CinemaFK");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sessoes_FilmeId",
+                name: "IX_Sessoes_FilmeFK",
                 table: "Sessoes",
-                column: "FilmeId");
+                column: "FilmeFK");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

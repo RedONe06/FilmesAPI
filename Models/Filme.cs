@@ -20,6 +20,8 @@ namespace FilmesAPI.Models
         [Range(1,600,ErrorMessage = "Deve estar entre 1 e 600")]
         public int Duracao { get; set; }
 
+        [Required(ErrorMessage = "O campo Classificação Etária é obrigatório")]
+        public int ClassificacaoEtaria { get; set; }
         [JsonIgnore]
         public virtual List<Sessao> Sessoes { get; set; }
 

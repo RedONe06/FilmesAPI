@@ -40,7 +40,7 @@ namespace FilmesAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult ResgatarEnderecoPorId(int id)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
+            Endereco endereco = BuscarNoBancoPorId(id);
 
             if (endereco != null)
             {
@@ -55,8 +55,8 @@ namespace FilmesAPI.Controllers
         [HttpPut("{id}")]
         public IActionResult AtualizarEndereco(int id, [FromBody] UpdateEnderecoDTO enderecoDTO)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
-            if(endereco == null)
+            Endereco endereco = BuscarNoBancoPorId(id);
+            if (endereco == null)
             {
                 return NotFound();
             }
@@ -68,7 +68,7 @@ namespace FilmesAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletarEndereco(int id)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
+            Endereco endereco = BuscarNoBancoPorId(id);
             if (endereco == null)
             {
                 return NotFound();
@@ -76,6 +76,11 @@ namespace FilmesAPI.Controllers
             _context.Enderecos.Remove(endereco);
             _context.SaveChanges();
             return NoContent();
+        }
+
+        private Endereco BuscarNoBancoPorId(int id)
+        {
+            return _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
         }
     }
 }

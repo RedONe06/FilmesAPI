@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmesAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221117151005_RelacaoFilmeCinema")]
-    partial class RelacaoFilmeCinema
+    [Migration("20221118135016_Ajustes")]
+    partial class Ajustes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,12 +28,6 @@ namespace FilmesAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("EnderecoFK")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EnderecoFK")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GerenteFK")
                         .HasColumnType("int");
 
                     b.Property<int>("GerenteFK")
@@ -79,6 +73,9 @@ namespace FilmesAPI.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClassificacaoEtaria")
                         .HasColumnType("int");
 
                     b.Property<string>("Diretor")

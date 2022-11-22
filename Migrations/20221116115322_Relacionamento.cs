@@ -77,7 +77,7 @@ namespace FilmesAPI.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Cinemas_EnderecoId",
                 table: "Cinemas",
-                column: "EnderecoId",
+                column: "EnderecoFK",
                 unique: true);
         }
 

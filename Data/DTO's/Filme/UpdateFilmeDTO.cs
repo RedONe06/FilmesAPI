@@ -14,5 +14,7 @@ namespace FilmesAPI.Data.DTO_s
 
         [Range(1, 600, ErrorMessage = "Deve estar entre 1 e 600")]
         public int Duracao { get; set; }
+
+        public int ClassificacaoEtaria { get; set; }
     }
 }

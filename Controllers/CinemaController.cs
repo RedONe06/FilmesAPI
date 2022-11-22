@@ -20,9 +20,23 @@ namespace FilmesAPI.Controllers
         }
         
         [HttpGet]
-        public IEnumerable<Cinema> RecuperarCinemas()
+        public IActionResult RecuperarCinemas([FromQuery] string nomeDoFilme)
         {
-            return _appDbContext.Cinemas;
+            List<Cinema> cinemas = _appDbContext.Cinemas.ToList();
+            if(cinemas == null)
+            {
+                return NotFound();
+            }
+            if (string.IsNullOrEmpty(nomeDoFilme))
+            {
+                IEnumerable<Cinema> query = from cinema
+                                            in cinemas 
+                                            where cinema.Sessoes.Any(sessao => sessao.Filme.Titulo == nomeDoFilme) 
+                                            select cinema;
+                cinemas = query.ToList();
+            }
+            List<ReadCinemaDTO> readDTO = _mapper.Map<List<ReadCinemaDTO>>(cinemas);
+            return Ok(readDTO);
         }
 
         [HttpPost]
@@ -36,7 +50,7 @@ namespace FilmesAPI.Controllers
 
         public IActionResult RecuperaCinemaPorId(int id)
         {
-            Cinema cinema = _appDbContext.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
+            Cinema cinema = BuscarNoBancoPorId(id);
             if(cinema == null)
             {
                 return NotFound();
@@ -45,12 +59,14 @@ namespace FilmesAPI.Controllers
             return Ok(cinemaDTO);
         }
 
+        
+
         [HttpPut("{id}")]
         public IActionResult AtualizarCinema(int id, [FromBody] UpdateCinemaDTO cinemaDTO)
         {
-            Cinema cinema = _appDbContext.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
+            Cinema cinema = BuscarNoBancoPorId(id);
 
-            if(cinema == null)
+            if (cinema == null)
             {
                 return NotFound();
             }
@@ -62,8 +78,8 @@ namespace FilmesAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletarCinema(int id)
         {
-            Cinema cinema =_appDbContext.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
-            if(cinema == null)
+            Cinema cinema = BuscarNoBancoPorId(id);
+            if (cinema == null)
             {
                 return NotFound();
             }
@@ -71,6 +87,9 @@ namespace FilmesAPI.Controllers
             _appDbContext.SaveChanges();
             return NoContent();
         }
-
+        private Cinema BuscarNoBancoPorId(int id)
+        {
+            return _appDbContext.Cinemas.FirstOrDefault(cinema => cinema.Id == id);
+        }
     }
 }

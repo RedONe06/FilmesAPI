@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henry\\Downloads\\Andriele\\Entitys\\FilmesAPI.csproj": {}
+    "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henry\\Downloads\\Andriele\\Entitys\\FilmesAPI.csproj": {
+    "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henry\\Downloads\\Andriele\\Entitys\\FilmesAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj",
         "projectName": "FilmesAPI",
-        "projectPath": "C:\\Users\\henry\\Downloads\\Andriele\\Entitys\\FilmesAPI.csproj",
-        "packagesPath": "C:\\Users\\henry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henry\\Downloads\\Andriele\\Entitys\\obj\\",
+        "projectPath": "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj",
+        "packagesPath": "C:\\Users\\Andriele\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\henry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andriele\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,6 +78,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.11, 6.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.11, 6.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.11, 6.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.11, 6.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

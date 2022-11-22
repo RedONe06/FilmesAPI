@@ -32,13 +32,45 @@ namespace FilmesAPI.Controllers
         [HttpGet("{id}")]
         private object RecuperaSessaoPorId(int id)
         {
-            Sessao sessao = _context.Sessoes.FirstOrDefault(gerente => gerente.Id == id);
+            Sessao sessao = BuscarNoBancoPorId(id);
             if (sessao != null)
             {
                 ReadSessaoDTO sessaoDTO = _mapper.Map<ReadSessaoDTO>(sessao);
                 return Ok(sessaoDTO);
             }
             return NotFound();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletarSessao(int id)
+        {
+            Sessao sessao = BuscarNoBancoPorId(id);
+
+            if (sessao == null)
+            {
+                return NotFound();
+            }
+            _context.Remove(sessao);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizarSessao(int id, [FromBody] UpdateSessaoDTO sessaoDTO)
+        {
+            Sessao sessao = BuscarNoBancoPorId(id);
+
+            if (sessao == null)
+            {
+                return NotFound();
+            }
+            _mapper.Map(sessaoDTO, sessao);
+            _context.SaveChanges();
+            return NoContent();
+        }
+        private Sessao BuscarNoBancoPorId(int id)
+        {
+            return _context.Sessoes.FirstOrDefault(sessao => sessao.Id == id);
         }
     }
 }

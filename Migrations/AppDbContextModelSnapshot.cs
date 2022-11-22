@@ -28,13 +28,7 @@ namespace FilmesAPI.Migrations
                     b.Property<int>("EnderecoFK")
                         .HasColumnType("int");
 
-                    b.Property<int>("EnderecoId")
-                        .HasColumnType("int");
-
                     b.Property<int>("GerenteFK")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GerenteId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -43,10 +37,10 @@ namespace FilmesAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EnderecoId")
+                    b.HasIndex("EnderecoFK")
                         .IsUnique();
 
-                    b.HasIndex("GerenteId");
+                    b.HasIndex("GerenteFK");
 
                     b.ToTable("Cinemas");
                 });
@@ -77,6 +71,9 @@ namespace FilmesAPI.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClassificacaoEtaria")
                         .HasColumnType("int");
 
                     b.Property<string>("Diretor")
@@ -121,10 +118,10 @@ namespace FilmesAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CinemaId")
+                    b.Property<int>("CinemaFK")
                         .HasColumnType("int");
 
-                    b.Property<int>("FilmeId")
+                    b.Property<int>("FilmeFK")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("HorarioDeEncerramento")
@@ -132,9 +129,9 @@ namespace FilmesAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CinemaId");
+                    b.HasIndex("CinemaFK");
 
-                    b.HasIndex("FilmeId");
+                    b.HasIndex("FilmeFK");
 
                     b.ToTable("Sessoes");
                 });
@@ -143,13 +140,13 @@ namespace FilmesAPI.Migrations
                 {
                     b.HasOne("FilmesAPI.Models.Endereco", "Endereco")
                         .WithOne("Cinema")
-                        .HasForeignKey("FilmesAPI.Models.Cinema", "EnderecoId")
+                        .HasForeignKey("FilmesAPI.Models.Cinema", "EnderecoFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FilmesAPI.Models.Gerente", "Gerente")
                         .WithMany("Cinemas")
-                        .HasForeignKey("GerenteId")
+                        .HasForeignKey("GerenteFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -162,13 +159,13 @@ namespace FilmesAPI.Migrations
                 {
                     b.HasOne("FilmesAPI.Models.Cinema", "Cinema")
                         .WithMany("Sessoes")
-                        .HasForeignKey("CinemaId")
+                        .HasForeignKey("CinemaFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FilmesAPI.Models.Filme", "Filme")
                         .WithMany("Sessoes")
-                        .HasForeignKey("FilmeId")
+                        .HasForeignKey("FilmeFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

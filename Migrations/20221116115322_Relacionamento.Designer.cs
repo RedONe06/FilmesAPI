@@ -29,7 +29,7 @@ namespace FilmesAPI.Migrations
                     b.Property<int>("EnderecoFK")
                         .HasColumnType("int");
 
-                    b.Property<int>("EnderecoId")
+                    b.Property<int>("EnderecoFK")
                         .HasColumnType("int");
 
                     b.Property<int>("GerenteFK")
@@ -41,7 +41,7 @@ namespace FilmesAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EnderecoId")
+                    b.HasIndex("EnderecoFK")
                         .IsUnique();
 
                     b.ToTable("Cinemas");
@@ -100,7 +100,7 @@ namespace FilmesAPI.Migrations
                 {
                     b.HasOne("FilmesAPI.Models.Endereco", "Endereco")
                         .WithOne("Cinema")
-                        .HasForeignKey("FilmesAPI.Models.Cinema", "EnderecoId")
+                        .HasForeignKey("FilmesAPI.Models.Cinema", "EnderecoFK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

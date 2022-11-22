@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FilmesAPI.Data;
+using FilmesAPI.Data.DTO_s;
 using FilmesAPI.Data.DTO_s.Gerente;
 using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -33,8 +34,8 @@ namespace FilmesAPI.Controllers
         [HttpGet("{id}")]
         public object RecuperarGerentePorId(int id)
         {
-            Gerente gerente = _context.Gerente.FirstOrDefault(gerente => gerente.Id == id);
-            if(gerente != null)
+            Gerente gerente = BuscarNoBancoPorId(id);
+            if (gerente != null)
             {
                 ReadGerenteDTO gerenteDTO = _mapper.Map<ReadGerenteDTO>(gerente);
                 return Ok(gerenteDTO);
@@ -51,7 +52,7 @@ namespace FilmesAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletarGerente(int id)
         {
-            Gerente gerente = _context.Gerente.FirstOrDefault(gerente => gerente.Id == id);
+            Gerente gerente = BuscarNoBancoPorId(id);
 
             if (gerente == null)
             {
@@ -60,6 +61,25 @@ namespace FilmesAPI.Controllers
             _context.Remove(gerente);
             _context.SaveChanges();
             return NoContent();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizarGerente(int id, [FromBody] UpdateGerenteDTO gerenteDTO)
+        {
+            Gerente gerente = BuscarGerentePorIdNoBanco(id);
+
+            if (gerente == null)
+            {
+                return NotFound();
+            }
+            _mapper.Map(gerenteDTO, filme);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        private Gerente BuscarNoBancoPorId(int id)
+        {
+            return _context.Gerente.FirstOrDefault(gerente => gerente.Id == id);
         }
     }
 }

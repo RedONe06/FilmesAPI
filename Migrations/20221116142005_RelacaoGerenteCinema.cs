@@ -9,7 +9,7 @@ namespace FilmesAPI.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "GerenteId",
+                name: "GerenteFK",
                 table: "Cinemas",
                 type: "int",
                 nullable: false,
@@ -18,12 +18,12 @@ namespace FilmesAPI.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Cinemas_GerenteId",
                 table: "Cinemas",
-                column: "GerenteId");
+                column: "GerenteFK");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Cinemas_Gerente_GerenteId",
                 table: "Cinemas",
-                column: "GerenteId",
+                column: "GerenteFK",
                 principalTable: "Gerente",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
@@ -40,7 +40,7 @@ namespace FilmesAPI.Migrations
                 table: "Cinemas");
 
             migrationBuilder.DropColumn(
-                name: "GerenteId",
+                name: "GerenteFK",
                 table: "Cinemas");
         }
     }
