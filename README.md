@@ -6,6 +6,17 @@
 
 O projeto se trata de uma API Rest com .NET 6.0 básica de filmes utilizando EFCore 6.0, conectada a um banco de dados MySQL. Como referência foi-se utilizado um projeto da Alura, construído na versão 5.0 do .NET.
 
+# Sobre o curso
+
+- Preparação do ambiente Linux e Windows;
+- Validação de parâmetros com o uso de **annotations** e restrições;
+- Retornos baseados no tipo da requisição;
+- Instação de pacotes pelo NuGet;
+- Abrindo conexão da API com o Banco de dados;
+- Gerando e modificando migrations;
+- Utilizando DbContext para alterações no banco;
+- Utilizando AutoMapper e DTO's;
+
 # Executando
 
 ## 🔗 EndPoint
