@@ -86,3 +86,5 @@ C:\Users\henry\Downloads\Andriele\Entitys\obj\Debug\net6.0\refint\FilmesAPI.dll
 C:\Users\henry\Downloads\Andriele\Entitys\obj\Debug\net6.0\FilmesAPI.pdb
 C:\Users\henry\Downloads\Andriele\Entitys\obj\Debug\net6.0\FilmesAPI.genruntimeconfig.cache
 C:\Users\henry\Downloads\Andriele\Entitys\obj\Debug\net6.0\ref\FilmesAPI.dll
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\bin\Debug\net6.0\FluentResults.dll
+C:\Users\Andriele\Downloads\Alura\FilmesAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll

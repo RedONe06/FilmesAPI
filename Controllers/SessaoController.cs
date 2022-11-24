@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using FilmesAPI.Data;
+using FilmesAPI.Data.DTO_s;
 using FilmesAPI.Data.DTO_s.Gerente;
 using FilmesAPI.Data.DTO_s.Sessao;
 using FilmesAPI.Models;
+using FilmesAPI.Services;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmesAPI.Controllers
@@ -11,66 +14,56 @@ namespace FilmesAPI.Controllers
     [Route("[controller]")]
     public class SessaoController : ControllerBase
     {
-        private IMapper _mapper;
-        private AppDbContext _context;
+        SessaoService _sessaoService;
 
-        public SessaoController(AppDbContext context, IMapper mapper)
+        public SessaoController(SessaoService service)
         {
-            _mapper = mapper;
-            _context = context;
+            _sessaoService = service;
         }
 
         [HttpPost]
         public IActionResult AdicionarSessao([FromBody] CreateSessaoDTO sessaoDTO)
         {
-            Sessao sessao = _mapper.Map<Sessao>(sessaoDTO);
-            _context.Sessoes.Add(sessao);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(RecuperaSessaoPorId), new { Id = sessao.Id }, sessao);
+            ReadSessaoDTO readDTO = _sessaoService.AdicionarSessao(sessaoDTO);
+            return CreatedAtAction(nameof(RecuperarSessaoPorId), new { Id = readDTO.Id }, readDTO);
         }
 
         [HttpGet("{id}")]
-        private object RecuperaSessaoPorId(int id)
+        public object RecuperarSessaoPorId(int id)
         {
-            Sessao sessao = BuscarNoBancoPorId(id);
-            if (sessao != null)
+            ReadSessaoDTO readDTO = _sessaoService.RecuperarSessaoPorId(id);
+
+            if(readDTO == null)
             {
-                ReadSessaoDTO sessaoDTO = _mapper.Map<ReadSessaoDTO>(sessao);
-                return Ok(sessaoDTO);
+                NotFound();
             }
-            return NotFound();
+            return Ok(readDTO);
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeletarSessao(int id)
         {
-            Sessao sessao = BuscarNoBancoPorId(id);
+            Result resultado = _sessaoService.DeletarSessao(id);
 
-            if (sessao == null)
+            if (resultado.IsFailed)
             {
                 return NotFound();
             }
-            _context.Remove(sessao);
-            _context.SaveChanges();
             return NoContent();
+
+            
         }
 
         [HttpPut("{id}")]
         public IActionResult AtualizarSessao(int id, [FromBody] UpdateSessaoDTO sessaoDTO)
         {
-            Sessao sessao = BuscarNoBancoPorId(id);
+            Result resultado = _sessaoService.AtualizarSessao(id, sessaoDTO);
 
-            if (sessao == null)
+            if (resultado.IsFailed)
             {
                 return NotFound();
             }
-            _mapper.Map(sessaoDTO, sessao);
-            _context.SaveChanges();
             return NoContent();
-        }
-        private Sessao BuscarNoBancoPorId(int id)
-        {
-            return _context.Sessoes.FirstOrDefault(sessao => sessao.Id == id);
         }
     }
 }

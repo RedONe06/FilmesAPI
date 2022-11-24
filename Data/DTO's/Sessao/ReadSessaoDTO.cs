@@ -9,6 +9,5 @@ namespace FilmesAPI.Data.DTO_s.Sessao
         public int Id { get; set; }
         public DateTime HorarioDeEncerramento { get; set; }
         public DateTime HorarioDeInicio { get; set; }
-
     }
 }
