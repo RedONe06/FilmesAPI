@@ -19,10 +19,8 @@ builder.Services.AddScoped<CinemaService, CinemaService>();
 builder.Services.AddScoped<EnderecoService, EnderecoService>();
 builder.Services.AddScoped<GerenteService, GerenteService>();
 builder.Services.AddScoped<SessaoService, SessaoService>();
-
-
-
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
