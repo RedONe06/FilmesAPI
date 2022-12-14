@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using UsuariosAPI.Data;
 using UsuariosAPI.Services;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args) ;
 
 // Add services to the container.
 
@@ -21,11 +21,12 @@ builder.Services.AddScoped<TokenService, TokenService>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<UserDbContext>(opts => opts
 .UseLazyLoadingProxies()
-.UseMySql(builder.Configuration.GetConnectionString("UsuarioConnection"), new MySqlServerVersion(new Version(8, 0))));
+.UseMySql(builder.Configuration.GetConnectionString("UsuarioConnection"), new MySqlServerVersion(new Version(8, 0)), opt => opt.EnableRetryOnFailure()));
 builder.Services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(
     opts => opts.SignIn.RequireConfirmedEmail = true)
     .AddEntityFrameworkStores<UserDbContext>()
     .AddDefaultTokenProviders();
+builder.Configuration.AddUserSecrets<Program>();
 
 var app = builder.Build();
 

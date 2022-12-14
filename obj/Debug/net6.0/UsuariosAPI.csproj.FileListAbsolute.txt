@@ -82,3 +82,8 @@ C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\Microsoft.Identit
 C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\MailKit.dll
 C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\MimeKit.dll
+C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Andriele\Downloads\Alura\UsuariosAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

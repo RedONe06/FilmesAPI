@@ -26,7 +26,7 @@ namespace UsuariosAPI.Services
 
         private void Enviar(MimeMessage mensagemDeEmail)
         {
-            var x = _configuration.GetValue<int>("EmailSetting:Port");
+            var x = _configuration.GetValue<int>("EmailSettings:Port");
             var client = new SmtpClient("smtp.mailtrap.io", x)
             {
                 Credentials = new NetworkCredential("c1162a70437d32", "b4c13d9184f55b"),
