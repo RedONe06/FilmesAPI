@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj": {}
+    "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\FilmesAPI\\FilmesAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj": {
+    "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\FilmesAPI\\FilmesAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
         "projectName": "FilmesAPI",
-        "projectPath": "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj",
+        "projectPath": "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
         "packagesPath": "C:\\Users\\Andriele\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\obj\\",
+        "outputPath": "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\FilmesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andriele\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

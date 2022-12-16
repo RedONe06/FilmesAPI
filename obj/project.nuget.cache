@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R96k7huMrWP+z/Ej85tP1OtX+leCcB8FZOCDuq21YzJYtj7PFAC86MWWZRFKF0+PKF4juMXXeTB8qPmGn6jfkQ==",
+  "dgSpecHash": "HuRst0VQVIV7XWnixeDxliGR1a6X8c1FnrMS2OgaXAovUEr4b0oN2SHByhoMXByh0ZD1TU/SU7q6amtz+Qtn7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andriele\\Downloads\\Alura\\FilmesAPI\\FilmesAPI.csproj",
+  "projectFilePath": "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andriele\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Andriele\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
