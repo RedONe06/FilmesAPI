@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UsuariosAPI.Data;
+using UsuariosAPI.Models;
 using UsuariosAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args) ;
@@ -22,7 +23,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<UserDbContext>(opts => opts
 .UseLazyLoadingProxies()
 .UseMySql(builder.Configuration.GetConnectionString("UsuarioConnection"), new MySqlServerVersion(new Version(8, 0)), opt => opt.EnableRetryOnFailure()));
-builder.Services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(
+builder.Services.AddIdentity<CustomIdentityUser, IdentityRole<int>>(
     opts => opts.SignIn.RequireConfirmedEmail = true)
     .AddEntityFrameworkStores<UserDbContext>()
     .AddDefaultTokenProviders();

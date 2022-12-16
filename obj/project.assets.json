@@ -9173,11 +9173,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andriele\\Downloads\\Alura\\UsuariosAPI\\UsuariosAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\UsuariosAPI\\UsuariosAPI.csproj",
       "projectName": "UsuariosAPI",
-      "projectPath": "C:\\Users\\Andriele\\Downloads\\Alura\\UsuariosAPI\\UsuariosAPI.csproj",
+      "projectPath": "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\UsuariosAPI\\UsuariosAPI.csproj",
       "packagesPath": "C:\\Users\\Andriele\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andriele\\Downloads\\Alura\\UsuariosAPI\\obj\\",
+      "outputPath": "C:\\Users\\Andriele\\Downloads\\Alura\\AluraFilmesAPI\\UsuariosAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andriele\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9308,7 +9308,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
